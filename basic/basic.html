@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/gsap@3.6.1/dist/gsap.min.js"></script>
+
+	<title>GSAP</title>
+</head>
+<style type="text/css">
+	#myDiv {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 200px;
+	  height: 200px;
+	  background: red;
+	}
+
+	#myCircle {
+	  position: absolute;
+	  left: 50px;
+	  top: 350px;
+	  width: 150px;
+	  height: 150px;
+	  background: red;
+	  border-radius: 100%;
+	}
+</style>
+<body>
+	<div id="myDiv"></div>
+	<div id="myCircle"></div>	
+</body>
+
+<script type="text/javascript">
+	var tl = new TimelineLite;
+
+	tl.to("#myDiv", 2, {
+	  x:100,
+	  y:75,
+	  backgroundColor:"#000",
+	  ease: Power4.easeIn
+	})
+	.to ("#myDiv", 1 , {
+	  scaleX: 1.5,
+	  scaleY: 1.5,
+	  backgroundColor: "#454545",
+	  ease: Back.easeOut.config(1.7)
+	})
+	.from("#myCircle", 1, {
+	  opacity: 0,
+	});
+</script>
+
+</html>
